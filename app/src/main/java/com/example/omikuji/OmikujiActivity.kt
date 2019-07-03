@@ -11,17 +11,14 @@ class OmikujiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
 
-        var str = "大吉"
+        //var str = "good"
         val rnd = Random()
-        val number = rnd.nextInt(3)
+        val number = rnd.nextInt(20)
         val omikujiShelf = Array<String>(20, {"吉"})
 
+        omikujiShelf[0] = "凶"
+        omikujiShelf[19] = "大吉"
 
-        when (number) {
-            0 -> str = "吉"
-            1 -> str = "凶"
-        }
-
-        fortuneTxt.text = str
+        fortuneTxt.text = omikujiShelf[number]
     }
 }
