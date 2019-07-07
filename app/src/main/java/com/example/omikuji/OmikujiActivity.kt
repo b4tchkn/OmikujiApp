@@ -1,22 +1,19 @@
 package com.example.omikuji
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.animation.Animation
-import android.view.animation.AnimationSet
-import android.view.animation.RotateAnimation
-import android.view.animation.TranslateAnimation
-import kotlinx.android.synthetic.main.main.*
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.omikuji.*
-import java.util.*
 
 class OmikujiActivity : AppCompatActivity() {
+
+    val omikujiBox = OmikujiBox()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.omikuji)
 
+        omikujiBox.omikujiView = imageView
 
 /*
         // くじ番号の取得
@@ -34,6 +31,10 @@ class OmikujiActivity : AppCompatActivity() {
     }
 
     fun onButtonClick(v: View) {
+
+        omikujiBox.shake()
+
+/*
         val translate = TranslateAnimation(0f, 0f, 0f, -200f)
         translate.repeatMode = Animation.REVERSE
         translate.repeatCount = 5
@@ -47,7 +48,7 @@ class OmikujiActivity : AppCompatActivity() {
         set.addAnimation(translate)
 
         imageView.startAnimation(set)
-
+*/
         // imageView.setImageResource(R.drawable.result1)
     }
 
