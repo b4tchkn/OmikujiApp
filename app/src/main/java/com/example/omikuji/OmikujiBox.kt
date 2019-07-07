@@ -8,7 +8,17 @@ import android.widget.ImageView
 import kotlinx.android.synthetic.main.omikuji.*
 import java.util.*
 
-class OmikujiBox {
+class OmikujiBox: Animation.AnimationListener {
+    override fun onAnimationEnd(p0: Animation?) {
+        omikujiView.setImageResource(R.drawable.omikuji2)
+    }
+
+    override fun onAnimationStart(p0: Animation?) {
+    }
+
+    override fun onAnimationRepeat(p0: Animation?) {
+    }
+
     lateinit var omikujiView: ImageView
     var finish = false // 箱から出たか
     val number: Int // くじ番号
@@ -29,6 +39,8 @@ class OmikujiBox {
         val set = AnimationSet(true)
         set.addAnimation(rotate)
         set.addAnimation(translate)
+
+        set.setAnimationListener(this)
 
         omikujiView.startAnimation(set)
 
