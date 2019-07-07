@@ -2,15 +2,19 @@ package com.example.omikuji
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.main.*
+import kotlinx.android.synthetic.main.omikuji.*
 import java.util.*
 
 class OmikujiActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main)
+        setContentView(R.layout.omikuji)
 
+
+/*
         // くじ番号の取得
         val rnd = Random()
         val number = rnd.nextInt(20)
@@ -22,5 +26,11 @@ class OmikujiActivity : AppCompatActivity() {
 
         // おみくじ棚から取得
         fortuneTxt.text = omikujiShelf[number]
+*/
     }
+
+    fun onButtonClick(v: View) {
+        imageView.setImageResource(R.drawable.result1)
+    }
+
 }
