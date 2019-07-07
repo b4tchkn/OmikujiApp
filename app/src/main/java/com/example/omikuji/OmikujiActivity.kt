@@ -11,14 +11,16 @@ class OmikujiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
 
-        //var str = "good"
+        // くじ番号の取得
         val rnd = Random()
         val number = rnd.nextInt(20)
-        val omikujiShelf = Array<String>(20, {"吉"})
 
+        // おみくじ棚の準備
+        val omikujiShelf = Array<String>(20, {"吉"})
         omikujiShelf[0] = "凶"
         omikujiShelf[19] = "大吉"
 
+        // おみくじ棚から取得
         fortuneTxt.text = omikujiShelf[number]
     }
 }
