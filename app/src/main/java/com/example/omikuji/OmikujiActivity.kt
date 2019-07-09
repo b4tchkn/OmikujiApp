@@ -1,6 +1,7 @@
 package com.example.omikuji
 
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.fortune.*
@@ -84,6 +85,15 @@ class OmikujiActivity : AppCompatActivity() {
         // 画像とテキストを変更する
         imageView2.setImageResource(op.drawID)
         textView.setText(op.fortuneID)
+    }
+
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+        if (event?.action == MotionEvent.ACTION_DOWN) {
+            if (omikujiNumber < 0 && omikujiBox.finish) {
+                drawResult()
+            }
+        }
+        return super.onTouchEvent(event)
     }
 
 }
